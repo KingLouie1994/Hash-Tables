@@ -1,3 +1,4 @@
+Luis Schekerka
 # Hash Tables
 
 ## Day 1
