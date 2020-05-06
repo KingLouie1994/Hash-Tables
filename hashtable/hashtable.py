@@ -17,12 +17,24 @@ class HashTable:
     Implement this.
     """
 
+    def __init__(self, capacity):
+        self.capacity = capacity
+        self.storage = [None] * capacity
+
     def fnv1(self, key):
         """
         FNV-1 64-bit hash function
 
         Implement this, and/or DJB2.
         """
+
+        hash = 0x811c9dc5
+        fnv_32_prime = 0x01000193
+        
+        for e in key.encode():
+            hash = hash ^ ord(e)
+            hash = (hash * fnv_32_prime)
+        return hash
 
     def djb2(self, key):
         """
